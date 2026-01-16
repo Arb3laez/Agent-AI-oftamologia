@@ -1,14 +1,14 @@
 """
-Agentes oftalmológicos 
-
+Agentes oftalmológicos adaptados para arquitectura de microservicios.
 """
 
 from typing import Dict
+from .cliente_groq import ClienteGroq
 
 class AgenteOftalmologico:
     """Clase base para agentes oftalmológicos."""
     
-    def __init__(self, cliente, nombre: str, especialidad: str):
+    def __init__(self, cliente: ClienteGroq, nombre: str, especialidad: str):
         self.cliente = cliente
         self.nombre = nombre
         self.especialidad = especialidad
@@ -18,11 +18,11 @@ class AgenteOftalmologico:
         system_prompt = self._obtener_prompt_sistema()
         prompt_usuario = self._construir_prompt_analisis(historial)
         
-        print(f"  → Analizando con {self.nombre}...")
+        # print(f"  → Analizando con {self.nombre}...") # Removed for microservice clean logs
         respuesta = self.cliente.generar_respuesta(
             prompt=prompt_usuario,
             system_prompt=system_prompt,
-            temperatura=0.3  # Baja temperatura para respuestas médicas precisas
+            temperature=0.3
         )
         
         return respuesta
@@ -52,7 +52,7 @@ Formato: Profesional, conciso, basado en evidencia médica actual."""
 class AgenteOftalmologoGeneral(AgenteOftalmologico):
     """Oftalmólogo general - Primera línea de evaluación."""
     
-    def __init__(self, cliente):
+    def __init__(self, cliente: ClienteGroq):
         super().__init__(
             cliente=cliente,
             nombre="Dr. Oftalmólogo General",
@@ -90,7 +90,7 @@ Prioriza la seguridad del paciente identificando condiciones que puedan causar p
 class AgenteRetina(AgenteOftalmologico):
     """Especialista en retina y vítreo."""
     
-    def __init__(self, cliente):
+    def __init__(self, cliente: ClienteGroq):
         super().__init__(
             cliente=cliente,
             nombre="Dra. Especialista en Retina",
@@ -129,7 +129,7 @@ Basa tus recomendaciones en guías AAO y EURETINA. Considera siempre la anatomí
 class AgenteCornea(AgenteOftalmologico):
     """Especialista en córnea y superficie ocular."""
     
-    def __init__(self, cliente):
+    def __init__(self, cliente: ClienteGroq):
         super().__init__(
             cliente=cliente,
             nombre="Dr. Especialista en Córnea",
@@ -172,7 +172,7 @@ Evalúa siempre la necesidad de tratamiento urgente en infecciones corneales."""
 class AgenteNeuroOftalmologia(AgenteOftalmologico):
     """Especialista en neuro-oftalmología."""
     
-    def __init__(self, cliente):
+    def __init__(self, cliente: ClienteGroq):
         super().__init__(
             cliente=cliente,
             nombre="Dr. Neuro-oftalmólogo",
@@ -220,19 +220,12 @@ Identifica emergencias neuro-oftalmológicas que requieren manejo urgente multid
 class EquipoMultidisciplinarioOftalmologico:
     """Coordina y sintetiza los reportes de todos los especialistas."""
     
-    def __init__(self, cliente):
+    def __init__(self, cliente: ClienteGroq):
         self.cliente = cliente
     
     def analizar_reportes(self, historial: str, reportes: Dict[str, str]) -> str:
         """
         Integra todos los reportes en un consenso médico final.
-        
-        Args:
-            historial: Historial clínico original
-            reportes: Dict con {especialidad: reporte}
-            
-        Returns:
-            str: Diagnóstico final consensuado
         """
         system_prompt = """Eres el director médico de un equipo multidisciplinario de oftalmología en un hospital universitario.
 
@@ -277,7 +270,6 @@ ESTILO:
 
 Cuando hay discrepancias entre especialistas, explica ambas perspectivas y justifica la conclusión final."""
         
-        # Construir prompt con todos los reportes
         prompt_completo = f"""==============================================
 HISTORIAL CLÍNICO ORIGINAL
 ==============================================
@@ -292,7 +284,7 @@ REPORTES DE ESPECIALISTAS
         for especialidad, reporte in reportes.items():
             prompt_completo += f"""
 {'─'*60}
- REPORTE: {especialidad.upper()}
+📋 REPORTE: {especialidad.upper()}
 {'─'*60}
 {reporte}
 
@@ -312,12 +304,10 @@ Basándote en TODOS los reportes anteriores:
 
 El objetivo es proporcionar al médico tratante un consenso claro para tomar decisiones."""
         
-        print("  → Generando consenso médico final...")
         diagnostico_final = self.cliente.generar_respuesta(
             prompt=prompt_completo,
             system_prompt=system_prompt,
-            temperatura=0.2,  # Muy baja para máxima precisión
-            max_tokens=6000   # Permitir respuesta más extensa
+            temperature=0.2
         )
         
         return diagnostico_final

@@ -1,0 +1,70 @@
+PACIENTE: Diego Arbelaez
+EDAD: 21
+FECHA: 08/01/2026
+
+MOTIVO DE CONSULTA:
+
+El paciente consulta por “pérdida súbita de visión en el ojo izquierdo” de inicio hace 48 horas. Refiere que la visión se volvió “oscura y borrosa” de manera repentina, sin recuperación posterior. Niega dolor ocular, fotopsias o visión doble. Refiere leve cefalea occipital asociada.
+
+ANTECEDENTES MÉDICOS:
+
+Hipertensión arterial sistémica diagnosticada hace 20 años (control irregular).
+
+Diabetes Mellitus Tipo 2 desde hace 10 años (HbA1c: 7.9%).
+
+Antecedente de cardiopatía isquémica (angioplastia hace 3 años).
+
+Tabaquismo previo: 20 paquetes/año (suspendido hace 2 años).
+
+EXAMEN OFTALMOLÓGICO:
+1. AGUDEZA VISUAL (con corrección):
+
+OD (Ojo Derecho): 20/30
+
+OI (Ojo Izquierdo): Cuenta dedos a 1 metro (no mejora con agujero estenopeico)
+
+2. PRESIÓN INTRAOCULAR (Tonometría de aplanación):
+
+OD: 15 mmHg
+
+OI: 14 mmHg
+
+3. BIOMICROSCOPIA (Lámpara de hendidura):
+
+Segmento anterior: Córneas claras, cámara anterior profunda y tranquila.
+
+Cristalino: Catarata nuclear grado II bilateral.
+
+Iris: Sin rubeosis visible en ambos ojos.
+
+4. FONDO DE OJO (Bajo dilatación pupilar):
+
+OD:
+
+Papila óptica de bordes definidos, excavación 0.3.
+
+Mácula con brillo foveolar conservado.
+
+Retina sin hemorragias ni exudados significativos.
+
+OI:
+
+Vítreo: Transparente.
+
+Retina: Edema retiniano difuso con múltiples hemorragias intrarretinianas en llama y en punto, distribuidas en los cuatro cuadrantes.
+
+Mácula: Edema macular marcado con pérdida del reflejo foveal.
+
+Vasos: Venas dilatadas y tortuosas (“signo de salchicha”), con áreas de no perfusión capilar.
+
+Nervio óptico: Papila hiperémica con bordes ligeramente borrados.
+
+5. CAMPOS VISUALES:
+
+OD: Dentro de límites normales.
+
+OI: Pérdida generalizada de sensibilidad con defecto central y periférico.
+
+IMPRESIÓN DIAGNÓSTICA PRELIMINAR (POR EL RESIDENTE):
+
+Paciente con factores de riesgo cardiovascular significativos que presenta pérdida visual súbita e indolora en ojo izquierdo. Hallazgos clínicos altamente sugestivos de Oclusión de la Vena Central de la Retina (OVCR) isquémica, con edema macular severo. Se recomienda evaluación urgente por retina, realización de OCT macular, angiografía fluoresceínica, control estricto de factores sistémicos y vigilancia estrecha por riesgo de glaucoma neovascular.

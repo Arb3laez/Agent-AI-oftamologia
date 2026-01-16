@@ -1,0 +1,70 @@
+PACIENTE: María González
+EDAD: 58 años
+FECHA: 05/01/2026
+
+MOTIVO DE CONSULTA:
+
+La paciente acude a consulta refiriendo “disminución progresiva de la visión en el ojo izquierdo” desde hace aproximadamente 1 mes. Refiere dificultad para leer y distorsión leve de las imágenes (metamorfopsias). Niega fotopsias o cuerpos flotantes. No presenta dolor ocular.
+
+ANTECEDENTES MÉDICOS:
+
+Diabetes Mellitus Tipo 2 diagnosticada hace 12 años (control irregular, HbA1c: 8.1%).
+
+Dislipidemia en tratamiento con estatinas.
+
+Hipertensión arterial controlada con Enalapril.
+
+Niega tabaquismo actual (exfumadora, suspendió hace 5 años).
+
+EXAMEN OFTALMOLÓGICO:
+1. AGUDEZA VISUAL (con corrección):
+
+OD (Ojo Derecho): 20/30
+
+OI (Ojo Izquierdo): 20/80 (mejora parcial a 20/60 con agujero estenopeico)
+
+2. PRESIÓN INTRAOCULAR (Tonometría de aplanación):
+
+OD: 17 mmHg
+
+OI: 19 mmHg
+
+3. BIOMICROSCOPIA (Lámpara de hendidura):
+
+Segmento anterior: Conjuntivas normocoloreadas, córneas transparentes, cámara anterior profunda y sin reacción inflamatoria.
+
+Cristalino: Catarata nuclear grado I-II en ambos ojos, discretamente mayor en OI, no suficiente para explicar completamente la disminución visual.
+
+4. FONDO DE OJO (Bajo dilatación pupilar):
+
+OD:
+
+Papila óptica de bordes bien definidos, excavación 0.3.
+
+Mácula con brillo foveolar conservado.
+
+Retina con microaneurismas aislados y escasas hemorragias puntiformes en polo posterior.
+
+Sin signos de neovascularización.
+
+OI:
+
+Vítreo: Transparente, sin células ni hemorragias.
+
+Retina: Múltiples microaneurismas y hemorragias dot-blot en los cuatro cuadrantes.
+
+Mácula: Engrosamiento macular clínico con pérdida del reflejo foveal, compatible con edema macular diabético.
+
+Vasos: Tortuosidad venosa leve, sin neovasos evidentes en papila.
+
+Nervio óptico: Bordes definidos, excavación aproximada de 0.4.
+
+5. CAMPOS VISUALES:
+
+OD: Dentro de límites normales.
+
+OI: Escotoma central relativo, con leve disminución de la sensibilidad macular.
+
+IMPRESIÓN DIAGNÓSTICA PRELIMINAR (POR EL RESIDENTE):
+
+Paciente diabética con control metabólico subóptimo que presenta disminución visual progresiva en OI. Hallazgos compatibles con Retinopatía Diabética No Proliferativa Severa con Edema Macular Diabético clínicamente significativo en ojo izquierdo. Se recomienda complementar estudios con OCT macular, angiografía fluoresceínica y valoración por retina para definir manejo con terapia anti-VEGF y optimización del control sistémico.

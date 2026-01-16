@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'orchestrator'
+    static_configs:
+      - targets: ['orchestrator:8000']
+  - job_name: 'agent-general'
+    static_configs:
+      - targets: ['agent-general:8000']

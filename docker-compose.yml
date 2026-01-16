@@ -1,0 +1,90 @@
+version: '3.8'
+
+services:
+  orchestrator:
+    build:
+      context: ./orchestrator
+    ports:
+      - "8000:8000"
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - URL_AGENT_GENERAL=http://agent-general:8000
+      - URL_AGENT_RETINA=http://agent-retina:8000
+      - URL_AGENT_CORNEA=http://agent-cornea:8000
+      - URL_AGENT_NEURO=http://agent-neuro:8000
+      - URL_AGENT_DIRECTOR=http://agent-director:8000
+    depends_on:
+      - agent-general
+      - agent-retina
+      - agent-cornea
+      - agent-neuro
+      - agent-director
+
+  agent-general:
+    build:
+      context: ./agents
+    environment:
+      - AGENT_TYPE=GENERAL
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+
+  agent-retina:
+    build:
+      context: ./agents
+    environment:
+      - AGENT_TYPE=RETINA
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+
+  agent-cornea:
+    build:
+      context: ./agents
+    environment:
+      - AGENT_TYPE=CORNEA
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+
+  agent-neuro:
+    build:
+      context: ./agents
+    environment:
+      - AGENT_TYPE=NEURO
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+
+  agent-director:
+    build:
+      context: ./agents
+    environment:
+      - AGENT_TYPE=DIRECTOR
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus

@@ -1,0 +1,58 @@
+======================================================================
+DIAGNÓSTICO OFTALMOLÓGICO - REPORTE FINAL
+======================================================================
+Fecha de generación: 16/01/2026 15:05:30
+Sistema: Multi-Agente Oftalmológico
+Modelo de IA: Groq - llama-3.3-70b-versatile
+Especialistas consultados: 4
+======================================================================
+
+**CONSENSO MÉDICO FINAL**
+
+**1. RESUMEN EJECUTIVO**
+
+El paciente Steve Rogers, de 28 años, presenta con visión borrosa y distorsión de las líneas rectas en el ojo derecho desde hace 5 días, sin dolor ocular ni antecedentes de trauma ocular reciente. La agudeza visual en el ojo derecho es de 20/60, con mejora parcial a 20/40 con agujero estenopeico. El examen del fondo de ojo muestra elevación serosa discreta en la región foveal con pérdida del reflejo foveolar en el ojo derecho.
+
+**2. DIAGNÓSTICO PRINCIPAL**
+
+El diagnóstico más probable es **Coriorretinopatía Serosa Central (CSC) Aguda**, con un grado de certeza alto. Los hallazgos clínicos que justifican este diagnóstico incluyen la presentación de visión borrosa central, metamorfopsias, y la elevación serosa en la región foveal en el fondo de ojo, lo que es compatible con CSC.
+
+**3. DIAGNÓSTICOS DIFERENCIALES**
+
+Los diagnósticos diferenciales considerados incluyen:
+
+1. **Edema Macular Cístico (EMC)**: Aunque menos probable, el EMC podría considerarse, especialmente si se identifican cisternas de retina en estudios de imagen avanzados.
+2. **Degeneración Macular Relacionada con la Edad (DMRE)**: Menos probable en un paciente tan joven, pero podría considerarse si se encuentran drusas o atrofia en la mácula en el examen del fondo de ojo o en estudios de imagen.
+3. **Retinopatía Diabética**: Aunque el paciente niega diabetes, una evaluación de la función renal y glucémica podría ser necesaria para descartar esta condición.
+
+**4. PLAN DE MANEJO INTEGRAL**
+
+A. **Estudios diagnósticos prioritarios**:
+   - **OCT (Tomografía de Coherencia Óptica) Macular**: Para confirmar la presencia de fluido subretiniano y evaluar la anatomía macular.
+   - **Angiografía Fluoresceínica**: Para evaluar la integridad de la barrera hematorretiniana y detectar posibles fugas.
+
+B. **Tratamiento farmacológico**:
+   - **No farmacológico**: Control del estrés, ya que el estrés laboral significativo puede ser un factor desencadenante.
+   - **Farmacológico**: Puede considerarse el uso de antagonistas de los receptores de mineralocorticoides (como la eplerenona) o análogos de la hormona antidiurética (como el acetato de desmopresina) en algunos casos.
+
+C. **Procedimientos/cirugías**:
+   - No se recomienda tratamiento quirúrgico o láser en esta etapa.
+
+D. **Interconsultas necesarias**:
+   - Evaluación por un especialista en retina para seguimiento y posible tratamiento específico.
+
+E. **Plan de seguimiento**:
+   - Evaluaciones regulares para monitorear la resolución del edema seroso y la recuperación de la función visual.
+
+**5. PRONÓSTICO**
+
+El pronóstico visual a corto y largo plazo es generalmente favorable, con la mayoría de los casos de CSC aguda resolviéndose espontáneamente en semanas o meses. Sin embargo, el seguimiento estrecho es crucial para monitorear la resolución del edema y la recuperación visual.
+
+**6. BANDERAS ROJAS Y ALERTAS**
+
+- Síntomas de alarma incluyen dolor ocular, fotopsias, o una disminución repentina de la visión.
+- Criterios de re-evaluación urgente incluyen cualquier cambio en los síntomas o la aparición de nuevos síntomas.
+
+**CONCORDANCIA Y DISCREPANCIA ENTRE ESPECIALISTAS**
+
+Los puntos de concordancia incluyen el diagnóstico principal de CSC aguda y la recomendación de OCT macular y angiografía fluoresceínica como pruebas diagnósticas. Los puntos de discrepancia se centran en el enfoque del tratamiento, con algunos especialistas sugiriendo un enfoque más conservador y otros considerando opciones farmacológicas o terapia láser en casos seleccionados. La evidencia sugiere que la mayoría de los casos de CSC aguda se resuelven espontáneamente, lo que apoya un enfoque inicialmente conservador con un seguimiento estrecho.

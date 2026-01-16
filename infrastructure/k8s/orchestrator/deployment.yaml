@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orchestrator
+  namespace: oftalmo-system
+  labels:
+    app: orchestrator
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: orchestrator
+  template:
+    metadata:
+      labels:
+        app: orchestrator
+    spec:
+      containers:
+      - name: orchestrator
+        image: ghcr.io/arb3laez/oftalmo-orchestrator:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: GROQ_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: groq-secrets
+              key: api-key
+        - name: URL_AGENT_GENERAL
+          value: "http://agent-general"
+        - name: URL_AGENT_RETINA
+          value: "http://agent-retina"
+        - name: URL_AGENT_CORNEA
+          value: "http://agent-cornea"
+        - name: URL_AGENT_NEURO
+          value: "http://agent-neuro"
+        - name: URL_AGENT_DIRECTOR
+          value: "http://agent-director"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 20

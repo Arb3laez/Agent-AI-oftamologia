@@ -1,0 +1,68 @@
+PACIENTE: Steve Rogers
+EDAD: 28 años
+FECHA: 10/01/2026
+
+MOTIVO DE CONSULTA:
+
+El paciente acude a consulta refiriendo “visión borrosa y distorsión de las líneas rectas” en el ojo derecho desde hace 5 días. Refiere que los objetos se ven “ondulados” y nota una mancha central tenue al fijar la mirada. Niega dolor ocular, fotopsias, cuerpos flotantes o antecedente de trauma ocular reciente.
+
+ANTECEDENTES MÉDICOS:
+
+Sin antecedentes patológicos personales relevantes.
+
+Niega diabetes mellitus, hipertensión arterial u otras enfermedades sistémicas.
+
+No consumo de medicamentos de forma crónica.
+
+Estrés laboral significativo en las últimas semanas.
+
+Niega tabaquismo. Consumo ocasional de alcohol.
+
+EXAMEN OFTALMOLÓGICO:
+1. AGUDEZA VISUAL (con corrección):
+
+OD (Ojo Derecho): 20/60 (mejora parcial a 20/40 con agujero estenopeico)
+
+OI (Ojo Izquierdo): 20/20
+
+2. PRESIÓN INTRAOCULAR (Tonometría de aplanación):
+
+OD: 14 mmHg
+
+OI: 15 mmHg
+
+3. BIOMICROSCOPIA (Lámpara de hendidura):
+
+Segmento anterior: Conjuntivas normocoloreadas, córneas transparentes, cámara anterior profunda y sin reacción inflamatoria.
+
+Cristalino: Transparente en ambos ojos.
+
+4. FONDO DE OJO (Bajo dilatación pupilar):
+
+OD:
+
+Papila óptica de bordes netos, excavación 0.3.
+
+Mácula: Elevación serosa discreta en región foveal, con pérdida del reflejo foveolar.
+
+Retina periférica sin lesiones.
+
+Vasos de calibre normal.
+
+OI:
+
+Papila óptica normal, excavación 0.3.
+
+Mácula con brillo foveolar conservado.
+
+Retina sin alteraciones.
+
+5. CAMPOS VISUALES:
+
+OD: Escotoma central relativo.
+
+OI: Dentro de límites normales.
+
+IMPRESIÓN DIAGNÓSTICA PRELIMINAR (POR EL RESIDENTE):
+
+Paciente joven, sin comorbilidades sistémicas, que presenta visión borrosa central y metamorfopsias en ojo derecho. Hallazgos clínicos compatibles con Coriorretinopatía Serosa Central aguda. Se recomienda confirmación diagnóstica mediante OCT macular y, de ser necesario, angiografía fluoresceínica, además de manejo conservador inicial, control del estrés y seguimiento estrecho por retina.

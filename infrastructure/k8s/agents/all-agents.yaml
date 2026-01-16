@@ -1,0 +1,229 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: agent-general
+  namespace: oftalmo-system
+spec:
+  selector:
+    app: agent-general
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agent-general
+  namespace: oftalmo-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: agent-general
+  template:
+    metadata:
+      labels:
+        app: agent-general
+    spec:
+      containers:
+      - name: agent
+        image: ghcr.io/arb3laez/oftalmo-agent:latest
+        env:
+        - name: AGENT_TYPE
+          value: "GENERAL"
+        - name: GROQ_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: groq-secrets
+              key: api-key
+        ports:
+        - containerPort: 8000
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: agent-retina
+  namespace: oftalmo-system
+spec:
+  selector:
+    app: agent-retina
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agent-retina
+  namespace: oftalmo-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: agent-retina
+  template:
+    metadata:
+      labels:
+        app: agent-retina
+    spec:
+      containers:
+      - name: agent
+        image: ghcr.io/arb3laez/oftalmo-agent:latest
+        env:
+        - name: AGENT_TYPE
+          value: "RETINA"
+        - name: GROQ_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: groq-secrets
+              key: api-key
+        ports:
+        - containerPort: 8000
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: agent-cornea
+  namespace: oftalmo-system
+spec:
+  selector:
+    app: agent-cornea
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agent-cornea
+  namespace: oftalmo-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: agent-cornea
+  template:
+    metadata:
+      labels:
+        app: agent-cornea
+    spec:
+      containers:
+      - name: agent
+        image: ghcr.io/arb3laez/oftalmo-agent:latest
+        env:
+        - name: AGENT_TYPE
+          value: "CORNEA"
+        - name: GROQ_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: groq-secrets
+              key: api-key
+        ports:
+        - containerPort: 8000
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: agent-neuro
+  namespace: oftalmo-system
+spec:
+  selector:
+    app: agent-neuro
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agent-neuro
+  namespace: oftalmo-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: agent-neuro
+  template:
+    metadata:
+      labels:
+        app: agent-neuro
+    spec:
+      containers:
+      - name: agent
+        image: ghcr.io/arb3laez/oftalmo-agent:latest
+        env:
+        - name: AGENT_TYPE
+          value: "NEURO"
+        - name: GROQ_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: groq-secrets
+              key: api-key
+        ports:
+        - containerPort: 8000
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: agent-director
+  namespace: oftalmo-system
+spec:
+  selector:
+    app: agent-director
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agent-director
+  namespace: oftalmo-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: agent-director
+  template:
+    metadata:
+      labels:
+        app: agent-director
+    spec:
+      containers:
+      - name: agent
+        image: ghcr.io/arb3laez/oftalmo-agent:latest
+        env:
+        - name: AGENT_TYPE
+          value: "DIRECTOR"
+        - name: GROQ_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: groq-secrets
+              key: api-key
+        ports:
+        - containerPort: 8000
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
