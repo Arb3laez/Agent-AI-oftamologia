@@ -1,0 +1,27 @@
+# Version Control
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# Project specific
+resultados/
+Historales_Oftalmologicos/
+local_legacy_cli.py
+README.md
+docs/
+monitoring/
+infrastructure/
+scripts/
+
+# Docker
+docker-compose.yml
+Dockerfile*

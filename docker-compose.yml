@@ -1,13 +1,19 @@
 version: '3.8'
 
 services:
+  # ==========================================
+  # ORCHESTRATOR
+  # ==========================================
   orchestrator:
     build:
-      context: ./orchestrator
+      context: .
+      dockerfile: Dockerfile.orchestrator
+    container_name: ophthalmology-orchestrator
     ports:
       - "8000:8000"
+    env_file:
+      - .env
     environment:
-      - GROQ_API_KEY=${GROQ_API_KEY}
       - URL_AGENT_GENERAL=http://agent-general:8000
       - URL_AGENT_RETINA=http://agent-retina:8000
       - URL_AGENT_CORNEA=http://agent-cornea:8000
@@ -19,72 +25,72 @@ services:
       - agent-cornea
       - agent-neuro
       - agent-director
+    networks:
+      - ophthalmology-network
 
+  # ==========================================
+  # AGENTS
+  # ==========================================
   agent-general:
     build:
-      context: ./agents
+      context: .
+      dockerfile: Dockerfile.agent
+    container_name: agent-general
+    env_file:
+      - .env
     environment:
       - AGENT_TYPE=GENERAL
-      - GROQ_API_KEY=${GROQ_API_KEY}
-      - REDIS_URL=redis://redis:6379/0
-    depends_on:
-      - redis
+    networks:
+      - ophthalmology-network
 
   agent-retina:
     build:
-      context: ./agents
+      context: .
+      dockerfile: Dockerfile.agent
+    container_name: agent-retina
+    env_file:
+      - .env
     environment:
       - AGENT_TYPE=RETINA
-      - GROQ_API_KEY=${GROQ_API_KEY}
-      - REDIS_URL=redis://redis:6379/0
-    depends_on:
-      - redis
+    networks:
+      - ophthalmology-network
 
   agent-cornea:
     build:
-      context: ./agents
+      context: .
+      dockerfile: Dockerfile.agent
+    container_name: agent-cornea
+    env_file:
+      - .env
     environment:
       - AGENT_TYPE=CORNEA
-      - GROQ_API_KEY=${GROQ_API_KEY}
-      - REDIS_URL=redis://redis:6379/0
-    depends_on:
-      - redis
+    networks:
+      - ophthalmology-network
 
   agent-neuro:
     build:
-      context: ./agents
+      context: .
+      dockerfile: Dockerfile.agent
+    container_name: agent-neuro
+    env_file:
+      - .env
     environment:
       - AGENT_TYPE=NEURO
-      - GROQ_API_KEY=${GROQ_API_KEY}
-      - REDIS_URL=redis://redis:6379/0
-    depends_on:
-      - redis
+    networks:
+      - ophthalmology-network
 
   agent-director:
     build:
-      context: ./agents
+      context: .
+      dockerfile: Dockerfile.agent
+    container_name: agent-director
+    env_file:
+      - .env
     environment:
       - AGENT_TYPE=DIRECTOR
-      - GROQ_API_KEY=${GROQ_API_KEY}
-      - REDIS_URL=redis://redis:6379/0
-    depends_on:
-      - redis
+    networks:
+      - ophthalmology-network
 
-  redis:
-    image: redis:alpine
-    ports:
-      - "6379:6379"
-
-  prometheus:
-    image: prom/prometheus
-    ports:
-      - "9090:9090"
-    volumes:
-      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-
-  grafana:
-    image: grafana/grafana
-    ports:
-      - "3000:3000"
-    depends_on:
-      - prometheus
+networks:
+  ophthalmology-network:
+    driver: bridge

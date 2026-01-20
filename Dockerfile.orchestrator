@@ -1,0 +1,55 @@
+# Dockerfile.orchestrator
+# Multi-stage build for smaller image size and security
+
+# ==========================================
+# Stage 1: Builder
+# ==========================================
+FROM python:3.11-slim as builder
+
+WORKDIR /app
+
+# Prevent python from writing pyc files and buffering stdout
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Install system dependencies if needed (none apparent, but good practice)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install python dependencies to a temporary location
+COPY orchestrator/requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+# ==========================================
+# Stage 2: Runtime
+# ==========================================
+FROM python:3.11-slim as runtime
+
+WORKDIR /app
+
+# Create a non-root user
+RUN useradd -m appuser
+
+# Copy python packages from builder
+COPY --from=builder /root/.local /home/appuser/.local
+ENV PATH=/home/appuser/.local/bin:$PATH
+
+# Copy application code
+COPY orchestrator/ .
+
+# Ownership adjustment
+RUN chown -R appuser:appuser /app
+
+# Switch to non-root user
+USER appuser
+
+# Healthcheck
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+# Expose port
+EXPOSE 8000
+
+# Entrypoint
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
